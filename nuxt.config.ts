@@ -9,4 +9,5 @@ export default defineNuxtConfig({
       "nuxt-headlessui",
       "nuxt-icon",
    ],
+   css: ["@/assets/css/main.css"],
 });
