@@ -49,10 +49,10 @@ const socialNetworks = ref([
          <Icon name="mdi:account-question" class="text-2xl" />
       </DialogTitle>
       <main
-         class="px-2 grid md:grid-cols-2 gap-4 text-stone-900 dark:text-orange-50"
+         class="px-2 grid grid-cols-1 lg:grid-cols-2 gap-4 text-stone-900 dark:text-orange-50"
       >
          <section
-            class="border border-stone-300 dark:border-stone-600 rounded-lg p-3"
+            class="border col-span-full border-stone-300 dark:border-stone-600 rounded-lg p-3"
          >
             <div
                class="flex justify-between items-center text-2xl font-bold mb-3 px-2"
@@ -66,7 +66,7 @@ const socialNetworks = ref([
             </ul>
          </section>
          <section
-            class="border border-stone-300 dark:border-stone-600 rounded-lg p-3"
+            class="border col-span-full border-stone-300 dark:border-stone-600 rounded-lg p-3"
          >
             <div
                class="flex justify-between items-center text-2xl font-bold mb-3 px-2"
@@ -84,7 +84,7 @@ const socialNetworks = ref([
             </ul>
          </section>
          <section
-            class="border col-span-2 border-stone-300 dark:border-stone-600 rounded-lg p-3"
+            class="border col-span-full lg:col-span-2 border-stone-300 dark:border-stone-600 rounded-lg p-3"
          >
             <ul class="px-2 flex gap-4 justify-center">
                <li v-for="framework in frameworks" :key="framework.url">
