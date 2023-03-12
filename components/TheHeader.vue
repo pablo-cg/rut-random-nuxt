@@ -16,11 +16,11 @@ function closeConfigModal() {
 <template>
    <header class="h-12 flex justify-between items-center px-4">
       <section class="flex gap-4 items-center">
-         <IconButton
+         <AppIconButton
             icon="icon-park-outline:config"
             @click="toggleConfigModal()"
          />
-         <IconButton icon="icon-park-outline:info" @click="toggleInfoModal()" />
+         <AppIconButton icon="icon-park-outline:info" @click="toggleInfoModal()" />
       </section>
       <TheThemeSwitch />
    </header>
