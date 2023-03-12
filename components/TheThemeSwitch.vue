@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Switch } from "@headlessui/vue";
-const isDark = useDark();
 
+const isDark = useDark();
 </script>
 
 <template>

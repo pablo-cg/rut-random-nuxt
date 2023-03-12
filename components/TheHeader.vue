@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { useOptionsStore } from "../stores/options";
-
 const isOpenInfoModal = ref(false);
 const isOpenConfigModal = ref(false);
 
