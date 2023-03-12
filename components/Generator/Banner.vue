@@ -18,7 +18,7 @@ const emit = defineEmits<BannerEmits>();
       <section class="col-span-4 lg:col-span-5 flex justify-center">
          <img :src="logo" class="h-40 w-40" />
       </section>
-      <section class="col-span-8 lg:col-span-7 flex flex-col gap-1">
+      <section class="col-span-8 lg:col-span-7 flex flex-col gap-1 justify-center">
          <h1 class="font-bold text-4xl text-emerald-800 dark:text-emerald-400">
             {{ title }}
          </h1>
