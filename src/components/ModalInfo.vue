@@ -17,6 +17,26 @@ const optionsStore = useOptionsStore();
 
 const minimumRut = computed(() => optionsStore.minRut.toLocaleString());
 const maximumRut = computed(() => optionsStore.maxRut.toLocaleString());
+
+const frameworks = ref([
+   { url: "https://vuejs.org/", icon: "IconVue" },
+   { url: "https://nuxt.com/", icon: "IconNuxt" },
+   { url: "https://headlessui.com/", icon: "IconHeadlessUI" },
+   { url: "https://tailwindcss.com/", icon: "IconTailwind" },
+]);
+
+const socialNetworks = ref([
+   {
+      url: "https://github.com/pablo-cg",
+      icon: "ion:logo-github",
+      username: "pablo-cg",
+   },
+   {
+      url: "https://www.instagram.com/pablocg.uwu/?hl=es-la",
+      icon: "IconInstagram",
+      username: "pablocg.uwu",
+   },
+]);
 </script>
 
 <template>
@@ -55,18 +75,10 @@ const maximumRut = computed(() => optionsStore.maxRut.toLocaleString());
                <Icon name="clarity:info-standard-solid" />
             </div>
             <ul class="px-2 flex flex-col gap-1">
-               <li>
-                  <NuxtLink to="https://github.com/pablo-cg" target="_blank">
-                     <Icon name="ion:logo-github" class="text-2xl" /> pablo-cg
-                  </NuxtLink>
-               </li>
-               <li>
-                  <NuxtLink
-                     to="https://www.instagram.com/pablocg.uwu/?hl=es-la"
-                     target="_blank"
-                  >
-                     <Icon name="ion:logo-instagram" class="text-2xl" />
-                     pablocg.uwu
+               <li v-for="social in socialNetworks" :key="social.url">
+                  <NuxtLink :to="social.url" target="_blank">
+                     <Icon :name="social.icon" class="text-2xl" />
+                     {{ social.username }}
                   </NuxtLink>
                </li>
             </ul>
@@ -75,24 +87,9 @@ const maximumRut = computed(() => optionsStore.maxRut.toLocaleString());
             class="border col-span-2 border-stone-300 dark:border-stone-600 rounded-lg p-3"
          >
             <ul class="px-2 flex gap-4 justify-center">
-               <li>
-                  <NuxtLink to="https://vuejs.org/" target="_blank">
-                     <Icon name="simple-icons:vuedotjs" class="text-2xl" />
-                  </NuxtLink>
-               </li>
-               <li>
-                  <NuxtLink to="https://nuxt.com/" target="_blank">
-                     <Icon name="simple-icons:nuxtdotjs" class="text-2xl" />
-                  </NuxtLink>
-               </li>
-               <li>
-                  <NuxtLink to="https://headlessui.com/" target="_blank">
-                     <Icon name="simple-icons:headlessui" class="text-2xl" />
-                  </NuxtLink>
-               </li>
-               <li>
-                  <NuxtLink to="https://tailwindcss.com/" target="_blank">
-                     <Icon name="simple-icons:tailwindcss" class="text-2xl" />
+               <li v-for="framework in frameworks" :key="framework.url">
+                  <NuxtLink :to="framework.url" target="_blank">
+                     <Icon :name="framework.icon" class="text-2xl" />
                   </NuxtLink>
                </li>
             </ul>
