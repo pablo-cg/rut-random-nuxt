@@ -2,7 +2,6 @@
 import { storeToRefs } from "pinia";
 import { DialogTitle } from "@headlessui/vue";
 import { useOptionsStore } from "@/stores/options";
-import ModalWrapper from "./ModalWrapper.vue";
 
 type ConfigModalProps = {
    isOpen: boolean;
@@ -64,12 +63,12 @@ function guardarConfig() {
          <section class="mt-5 flex gap-2 flex-row-reverse">
             <AppButton
                label="Guardar"
-               class="btn-primary"
+               class="font-semibold w-24 bg-emerald-700 text-emerald-50 hover:bg-emerald-600 hover:text-white shadow-md shadow-emerald-700/15 active:shadow-none disabled:bg-emerald-700/50 disabled:shadow-none dark:bg-emerald-400 dark:text-emerald-900 dark:hover:bg-emerald-700 dark:hover:text-emerald-50 dark:shadow-lg dark:shadow-emerald-400/15 dark:active:shadow-none disabled:dark:bg-emerald-400/50 disabled:dark:text-emerald-100/50"
                @click="guardarConfig"
             />
             <AppButton
                label="Cancelar"
-               class="hover:bg-emerald-800/70 hover:text-emerald-50 text-stone-900 dark:text-orange-50"
+               class="w-24 hover:bg-emerald-800/70 hover:text-emerald-50 text-stone-900 dark:text-orange-50"
                @click="emit('close')"
             />
          </section>

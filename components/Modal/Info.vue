@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useOptionsStore } from "../stores/options";
+import { useOptionsStore } from "@/stores/options";
 import { DialogTitle } from "@headlessui/vue";
 
 type InfoModalProps = {
