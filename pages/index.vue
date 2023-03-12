@@ -6,5 +6,8 @@ useHead({
 </script>
 
 <template>
-   <h1>HOLA MUNDO</h1>
+   <main class="pt-3 gap-10 grid grid-cols-1 lg:gap-0 lg:grid-cols-2 lg:content-center lg:h-full">
+      <GeneratorRut />
+      <GeneratorEmail />
+   </main>
 </template>
