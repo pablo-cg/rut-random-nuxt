@@ -13,9 +13,11 @@
     "nuxt-headlessui": "^1.1.1"
   },
   "dependencies": {
+    "@fiquu/cl-rut": "^4.0.0",
     "@pinia-plugin-persistedstate/nuxt": "^1.0.0",
     "@pinia/nuxt": "^0.4.7",
     "@vueuse/nuxt": "^9.13.0",
-    "nuxt-icon": "^0.3.2"
+    "nuxt-icon": "^0.3.2",
+    "pinia": "^2.0.33"
   }
 }
