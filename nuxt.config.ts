@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+   css: ["@/assets/css/main.css"],
    modules: [
       "@nuxtjs/tailwindcss",
       "@pinia/nuxt",
@@ -8,5 +9,7 @@ export default defineNuxtConfig({
       "nuxt-headlessui",
       "nuxt-icon",
    ],
-   css: ["@/assets/css/main.css"],
+   piniaPersistedstate: {
+      storage: "localStorage",
+   },
 });
