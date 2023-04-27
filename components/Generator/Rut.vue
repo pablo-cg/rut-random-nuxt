@@ -3,7 +3,7 @@ import { useRutStore } from '~~/stores/rut'
 import { Item } from '~~/types'
 
 const { Rut } = useRut()
-const { postRutsGenerated } = useRutStore()
+const { postRutsGenerated, postRutCopied } = useRutStore()
 
 const rutList = ref<Item[]>([])
 const totalRutsGenerated = ref(0)
@@ -26,9 +26,10 @@ async function generateRandomRutList() {
   await debounceRutPost(totalRutsGenerated.value)
 }
 
-function copyRut(item: Item) {
+async function copyRut(item: Item) {
   item.isCopied = true
   navigator.clipboard.writeText(item.value)
+  await postRutCopied(item.value)
 }
 
 onMounted(async () => {
