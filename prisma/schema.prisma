@@ -14,7 +14,7 @@ datasource db {
 model email_generations {
   id               String   @id @default(uuid())
   generated_at     DateTime @default(now())
-  generated_emails Int
+  emails_generated Int
 }
 
 model email_copied {
@@ -26,7 +26,7 @@ model email_copied {
 model rut_generations {
   id             String   @id @default(uuid())
   generated_at   DateTime @default(now())
-  generated_ruts Int
+  ruts_generated Int
 }
 
 model rut_copied {
