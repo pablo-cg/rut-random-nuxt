@@ -1,16 +1,29 @@
 <script setup lang="ts">
+import { useEmailStore } from '~~/stores/email'
 import { Item } from '~~/types'
 
 const { Email } = useEmail()
+const { postEmailCopied, postEmailsGenerated } = useEmailStore()
 
 const emailList = ref<Item[]>([])
+const totalEmailsGenerated = ref(0)
 
-function generateRandomEmailList() {
+const debounceEmailPost = useDebounceFn((totalEmails: number) => {
+  postEmailsGenerated(totalEmails).finally(() => {
+    totalEmailsGenerated.value = 0
+  })
+}, 1500)
+
+async function generateRandomEmailList() {
   emailList.value = []
 
   for (let i = 0; i < 10; i++) {
     emailList.value.push(new Email())
   }
+
+  totalEmailsGenerated.value += emailList.value.length
+
+  await debounceEmailPost(totalEmailsGenerated.value)
 }
 
 function copyEmail(item: Item) {
@@ -18,8 +31,8 @@ function copyEmail(item: Item) {
   navigator.clipboard.writeText(item.value)
 }
 
-onMounted(() => {
-  generateRandomEmailList()
+onMounted(async () => {
+  await generateRandomEmailList()
 })
 </script>
 
