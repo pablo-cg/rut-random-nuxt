@@ -46,7 +46,9 @@ const emailStore = () => {
     getEmailsCopied,
     getEmailsGenerated,
     postEmailCopied,
-    postEmailsGenerated
+    postEmailsGenerated,
+    totalEmailsCopied,
+    totalEmailsGenerated
   }
 }
 

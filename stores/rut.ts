@@ -46,7 +46,9 @@ const rutStore = () => {
     getRutsGenerated,
     postRutsGenerated,
     getRutsCopied,
-    postRutCopied
+    postRutCopied,
+    totalRutsCopied,
+    totalRutsGenerated
   }
 }
 
