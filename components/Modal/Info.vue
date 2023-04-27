@@ -81,7 +81,7 @@ const socialNetworks = ref([
         <div
           class="flex justify-between items-center text-2xl font-bold mb-3 px-2"
         >
-          <h1>Estadisticas</h1>
+          <h1>Estadísticas</h1>
           <Icon name="clarity:analytics-solid" />
         </div>
         <div class="px-2 flex flex-col items-center gap-1" v-if="loading">
