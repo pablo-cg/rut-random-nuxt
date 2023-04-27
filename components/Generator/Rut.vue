@@ -22,8 +22,13 @@ async function generateRandomRutList() {
   }
 
   totalRutsGenerated.value += rutList.value.length
-  
+
   await debounceRutPost(totalRutsGenerated.value)
+}
+
+function copyRut(item: Item) {
+  item.isCopied = true
+  navigator.clipboard.writeText(item.value)
 }
 
 onMounted(async () => {
@@ -41,6 +46,6 @@ onMounted(async () => {
     >
       Genera una lista con 10 RUT aleatorios
     </GeneratorBanner>
-    <GeneratorList :items="rutList" />
+    <GeneratorList :items="rutList" @copy-item="copyRut" />
   </main>
 </template>
