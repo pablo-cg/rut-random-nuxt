@@ -26,9 +26,10 @@ async function generateRandomEmailList() {
   await debounceEmailPost(totalEmailsGenerated.value)
 }
 
-function copyEmail(item: Item) {
+async function copyEmail(item: Item) {
   item.isCopied = true
   navigator.clipboard.writeText(item.value)
+  await postEmailCopied(item.value)
 }
 
 onMounted(async () => {
