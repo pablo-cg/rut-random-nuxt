@@ -12,4 +12,7 @@ export default defineNuxtConfig({
    piniaPersistedstate: {
       storage: "localStorage",
    },
+   tailwindcss: {
+      configPath: ['./tailwind.config.js']
+   }
 });
