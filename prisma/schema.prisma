@@ -1,0 +1,36 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+model email_generations {
+  id               String   @id @default(uuid())
+  generated_at     DateTime @default(now())
+  generated_emails Int
+}
+
+model email_copied {
+  id        String   @id @default(uuid())
+  copied_at DateTime @default(now())
+  email     String
+}
+
+model rut_generations {
+  id             String   @id @default(uuid())
+  generated_at   DateTime @default(now())
+  generated_ruts Int
+}
+
+model rut_copied {
+  id        String   @id @default(uuid())
+  copied_at DateTime @default(now())
+  rut       String
+}
